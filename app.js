@@ -20,7 +20,8 @@ mongoose.connect(process.env.MONGODB_URL, {  useNewUrlParser: true, useUnifiedTo
 )
 app.use(cors());
 app.options("*", cors());
-app.use("/api", Allrouter)
+app.use("/api", Allrouter);
+app.use('/public/images/', express.static('public/images'));
 app.use((err, req, res, next)=>{
     res.status(err.status || 500);
     res.send({
