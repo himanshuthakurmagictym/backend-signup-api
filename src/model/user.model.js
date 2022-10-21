@@ -20,7 +20,6 @@ const bcrypt = require("bcrypt")
     },
     avatar: {
         type: String,
-        required: true,
         minlength: 8,
     }
 

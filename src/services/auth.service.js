@@ -2,14 +2,14 @@ const user = require("../model/user.model");
 const userModel = require("../model/user.model");
 const httpStatus =  require("http-status");
 const AppError = require("../middleware/catch-error");
-const creatUser = async(userbody)=>{
-
+const creatUser = async(userbody, file)=>{
+    console.log(file.path)
     await checkDuplicateEmail(userbody.email);
     const register = {
         name:userbody.name,
         email:userbody.email,
         password:userbody.password,
-        avatar:userbody.password,
+        avatar:file.path,
       }
     const user = await userModel.create(register);
     return user;

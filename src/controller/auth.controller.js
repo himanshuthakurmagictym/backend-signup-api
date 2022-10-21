@@ -3,7 +3,7 @@ const httpStatus =  require("http-status");
 const catchAsync =  require("../middleware/catch-async");
 const authService = require("../services/auth.service")
 const signupController = catchAsync(async(req, res)=>{
-   const response = await authService.creatUser(req.body);
+   const response = await authService.creatUser(req.body, req.file);
     const data = {
         status_code: httpStatus.CREATED,
         data: response,
