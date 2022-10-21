@@ -1,10 +1,10 @@
 const router =  require("express").Router();
 const multer = require('multer');
-const folderpathaffair = './public/images';
+const folderpath = './public/images';
 
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, folderpathaffair)
+        cb(null, folderpath)
     },
     filename: async function(req, file, cb) {
         cb(null, file.originalname);
