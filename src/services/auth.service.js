@@ -3,7 +3,7 @@ const userModel = require("../model/user.model");
 const httpStatus =  require("http-status");
 const AppError = require("../middleware/catch-error");
 const creatUser = async(userbody)=>{
-  
+
     await checkDuplicateEmail(userbody.email);
     const register = {
         name:userbody.name,
